@@ -41,7 +41,7 @@ function setupGlobalVariables() {
   minMarker = 7;
   maxMarker = 40;
   // shake control
-  shakesToClear = 3;
+  shakesToClear = 20;
   shakeCounter = 0;
 }
 
