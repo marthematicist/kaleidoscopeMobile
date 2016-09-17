@@ -109,7 +109,7 @@ function draw() {
   }
   
   cX = 0.5*xRes + 0.5*xRes*cos( a );
-  cY = 0.5*yRes + 0.5*yRes*sin( a ):
+  cY = 0.5*yRes + 0.5*yRes*sin( a );
   
   /*
   if( cX > maxRes ){
