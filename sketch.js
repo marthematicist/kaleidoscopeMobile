@@ -16,6 +16,9 @@ function setupGlobalVariables() {
   // cursor position
   cX = 0.5*xRes;
   cY = 0.5*yRes;
+  // radius and angle 
+  r = 0.1*maxRes;
+  a = 0;
   // cursor velocity
   vX = 0;
   vY = 0;
@@ -43,9 +46,6 @@ function setupGlobalVariables() {
   // shake control
   shakesToClear = 20;
   shakeCounter = 0;
-  
-  r = 0;
-  a = 0;
   
   clearFirstTime = true;
   startTime = 0;
@@ -99,39 +99,29 @@ function draw() {
 
   // update cursor position
   if( abs(dRotX) < maxRotX ) {
-    cX -= dRotY;
+    a -= 0.2*dRotY;
 
   }
   if( abs(dRotY) < maxRotY ) {
-    cY -= dRotX;
+    r += dRotX;
   }
+  a %= 360;
 
-  
-
-  
-  if( cX > maxRes ){
-    cX = maxRes;
+  if( r > 0.5*maxRes ){
+    r = 0.5*maxRes;
   }
-  if( cX < 0 ){
-    cX = 0;
-  }
-  if( cY > maxRes ){
-    cY = maxRes;
-  }
-  if( cY < 0 ) {
-    cY = 0;
+  if( r < 0 ) {
+    r = 0;
   }
   
   // update time variable
   t += dt;
   t %= 360;
   
-  // get cursor position, relative to center of screen
-  var x = cX - 0.5*xRes;
-  var y = cY - 0.5*yRes;
+
   
   // get distance from center to cursor
-  var d = sqrt( x*x + y*y );
+  var d = r;
   
   // distance ratio
   var dr = d / ( 0.5*min(xRes,yRes) );
@@ -147,13 +137,12 @@ function draw() {
   
   // Set the fill color
   fill( fillColor );
-  // translate to center of screen
-  translate( 0.5*xRes , 0.5*yRes );
   
   for( i = 0 ; i < numSpokes ; i++ ){
-    rotate( 360 / numSpokes );
+    var ang = a +  i/numSpokes * 360 ;
+    var x = 0.5*xRes + r*cos(ang);
+    var y = 0.5*yRes + r*sin(ang);
     ellipse( x , y , marker , marker);
-    
   }
   
   
