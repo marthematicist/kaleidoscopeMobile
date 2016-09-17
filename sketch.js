@@ -137,12 +137,15 @@ function draw() {
     ellipse( x , y , marker , marker);
     
   }
+  
+  
+  /* 
   buf.clear();
   buf.noStroke();
   buf.fill( markerColor );
   buf.ellipse( cX , cY , 10 , 10 );
   image( buf , 0 , 0 );
-  
+  */
   
 }
 
