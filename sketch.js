@@ -27,8 +27,8 @@ function setupGlobalVariables() {
   markerColor = color( 0 , 0 , 0 , 1);
   // how transparent the marker is
   markerAlpha = 0.15;
-  // number of frames to wait while initializing
-  waitFrames = 200;
+  // number of milliseconds to wait while initializing
+  waitTime = 3000;
   // frame counter;
   frameCounter = 0;
   // the number of "spokes"
@@ -67,6 +67,12 @@ function setup() {
   angleMode( DEGREES );
   background( bgColor );
   startTime = millis();
+  
+  textAlign( CENTER );
+  textSize( 60 );
+  text("KALEIDOSCOPE" , 0.5*xRes , 0.5*yRes );
+  textSize( 30 );
+  text( "Use your device's tilt sensors to draw. \n -marthematicist-" , 0.5*xRes , 0.5*yRes + 35 );
 }
 
 function draw() {
@@ -82,12 +88,8 @@ function draw() {
   gRotY = attenY*rotY + (1-attenX)*gRotY;
   
   // if still in setup, don't draw anything
-  if( millis() - startTime < 2000 ) {
-    textAlign( CENTER );
-    textSize( 60 );
-    text("KALEIDOSCOPE" , 0.5*xRes , 0.5*yRes );
-    textSize( 30 );
-    text( "Use your device's tilt sensors to draw. \n -marthematicist-3" , 0.5*xRes , 0.5*yRes + 35 );
+  if( millis() - startTime < waitTime ) {
+    
     return
   }
   if( clearFirstTime ) {
