@@ -27,7 +27,7 @@ function setupGlobalVariables() {
   // how transparent the marker is
   markerAlpha = 0.05;
   // number of frames to wait while initializing
-  waitFrames = 100;
+  waitFrames = 200;
   // frame counter;
   frameCounter = 0;
   // the number of "spokes"
