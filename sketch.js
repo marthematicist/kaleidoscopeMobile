@@ -65,6 +65,7 @@ function setup() {
   }
   
   background( bgColor );
+  buf.clear();
 }
 
 function draw() {
@@ -122,19 +123,20 @@ function draw() {
   // size of marker
   var marker = lerp( minMarker , maxMarker , dr );
   
+  
   // translate to center of screen
-  translate( 0.5*xRes , 0.5*yRes );
+  buf.translate( 0.5*xRes , 0.5*yRes );
   
   // set marker color
   fillColor = color( t , 100 , 100 , markerAlpha );
   
   // Set the fill color
-  fill( fillColor );
+  buf.fill( fillColor );
   
   
   for( i = 0 ; i < numSpokes ; i++ ){
-    rotate( 360 / numSpokes );
-    ellipse( x , y , marker , marker);
+    buf.rotate( 360 / numSpokes );
+    buf.ellipse( x , y , marker , marker);
     
   }
   
@@ -144,8 +146,9 @@ function draw() {
   buf.noStroke();
   buf.fill( markerColor );
   buf.ellipse( cX , cY , 10 , 10 );
-  image( buf , 0 , 0 );
+  
   */
+  image( buf , 0 , 0 );
   
 }
 
