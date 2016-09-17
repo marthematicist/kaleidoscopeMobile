@@ -46,6 +46,9 @@ function setupGlobalVariables() {
   
   r = 0;
   a = 0;
+  
+  clearFirstTime = true;
+  startTime = 0;
 }
 
 
@@ -63,7 +66,7 @@ function setup() {
   // set the angle mode to degrees
   angleMode( DEGREES );
   background( bgColor );
-  
+  startTime = millis();
 }
 
 function draw() {
@@ -79,7 +82,7 @@ function draw() {
   gRotY = attenY*rotY + (1-attenX)*gRotY;
   
   // if still in setup, don't draw anything
-  if( frameCounter < waitFrames ) {
+  if( millis - startTime < 2000 ) {
     textAlign( CENTER );
     textSize( 60 );
     text("KALEIDOSCOPE" , 0.5*xRes , 0.5*yRes );
@@ -87,8 +90,9 @@ function draw() {
     text( "Use your device's tilt sensors to draw. \n -marthematicist-" , 0.5*xRes , 0.5*yRes + 35 );
     return
   }
-  if( frameCounter == waitFrames) {
+  if( clearFirstTime ) {
     background( bgColor );
+    clearFirstTime = false;
   }
 
   // update cursor position
