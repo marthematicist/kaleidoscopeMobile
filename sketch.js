@@ -40,7 +40,9 @@ function setupGlobalVariables() {
   // size of the dots drawn
   minMarker = 7;
   maxMarker = 40;
-  setShakeThreshold( 50 );
+  // shake control
+  shakesToClear = 3;
+  shakeCounter = 0;
 }
 
 
@@ -147,5 +149,9 @@ function draw() {
 
 
 function deviceShaken() {
-  background( bgColor );
+  shakeCounter++;
+  if( shakeCounter >= shakesToClear ){
+    shakeCounter = 0;
+    background( bgColor );
+  }
 }
