@@ -37,7 +37,7 @@ function setupGlobalVariables() {
   dt = 1;
   // minMarker and maxMarker control the smallest and largest
   // size of the dots drawn
-  minMarker = 5;
+  minMarker = 10;
   maxMarker = 40;
 }
 
@@ -77,7 +77,7 @@ function draw() {
     textSize( 60 );
     text("KALEIDOSCOPE" , 0.5*xRes , 0.5*yRes );
     textSize( 30 );
-    text( "Use your device's tilt sensors to draw. \n -marthematicist-" , 0.5*xRes , 0.5*yRes + 30 );
+    text( "Use your device's tilt sensors to draw. \n -marthematicist-" , 0.5*xRes , 0.5*yRes + 35 );
     return
   }
   if( frameCounter == waitFrames) {
