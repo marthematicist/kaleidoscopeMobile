@@ -70,7 +70,7 @@ function setup() {
 
 function draw() {
   frameCounter++;
-  
+  buf.push();
   // the current device rotation measurements
   var rotX = rotationX;
   var rotY = rotationY;
@@ -148,6 +148,7 @@ function draw() {
   buf.ellipse( cX , cY , 10 , 10 );
   
   */
+  buf.pop();
   image( buf , 0 , 0 );
   
 }
