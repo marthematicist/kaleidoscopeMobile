@@ -40,6 +40,7 @@ function setupGlobalVariables() {
   // size of the dots drawn
   minMarker = 7;
   maxMarker = 40;
+  setShakeThreshold( 50 );
 }
 
 
