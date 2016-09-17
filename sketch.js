@@ -25,7 +25,7 @@ function setupGlobalVariables() {
   drawColor = color( 0 , 0 , 0 , 1);
   markerColor = color( 0 , 0 , 0 , 1);
   // how transparent the marker is
-  markerAlpha = 0.05;
+  markerAlpha = 0.1;
   // number of frames to wait while initializing
   waitFrames = 200;
   // frame counter;
