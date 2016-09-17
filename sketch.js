@@ -43,6 +43,9 @@ function setupGlobalVariables() {
   // shake control
   shakesToClear = 20;
   shakeCounter = 0;
+  
+  r = 0;
+  a = 0;
 }
 
 
@@ -90,11 +93,25 @@ function draw() {
 
   // update cursor position
   if( abs(dRotX) < maxRotX ) {
-    cX -= dRotY;
+    // cX -= dRotY;
+    a -= 0.2*dRotY;
   }
   if( abs(dRotY) < maxRotY ) {
-    cY -= dRotX;
+    //cY -= dRotX;
+    r -= dRotX;
   }
+  a %= 360;
+  if( r > 0.5*maxRes ){
+    r = 0.5*maxRes;
+  }
+  if( r < 0 ) {
+    r = 0;
+  }
+  
+  cX = 0.5*xRes + 0.5*xRes*cos( a );
+  cY = 0.5*yRes + 0.5*yRes*sin( a ):
+  
+  /*
   if( cX > maxRes ){
     cX = maxRes;
   }
@@ -107,6 +124,7 @@ function draw() {
   if( cY < 0 ) {
     cY = 0;
   }
+  */
   
   // update time variable
   t += dt;
