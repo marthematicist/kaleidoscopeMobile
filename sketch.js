@@ -82,7 +82,7 @@ function draw() {
   gRotY = attenY*rotY + (1-attenX)*gRotY;
   
   // if still in setup, don't draw anything
-  if( millis - startTime < 2000 ) {
+  if( millis() - startTime < 2000 ) {
     textAlign( CENTER );
     textSize( 60 );
     text("KALEIDOSCOPE" , 0.5*xRes , 0.5*yRes );
