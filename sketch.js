@@ -99,11 +99,11 @@ function draw() {
 
   // update cursor position
   if( abs(dRotX) < maxRotX ) {
-    a -= 0.1*dRotY;
+    a -= 0.05*dRotY;
 
   }
   if( abs(dRotY) < maxRotY ) {
-    r += 0.7*dRotX;
+    r += 0.9*dRotX;
   }
   a %= 360;
 
