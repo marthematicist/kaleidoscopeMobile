@@ -145,9 +145,6 @@ function draw() {
 
 
 
-function keyTyped() {
-  if( key === 's' ) {
-    saveCanvas( 'canvas' , 'jpg' );
-    console.log("saved");
-  }
+function deviceShaken() {
+  background( bgColor );
 }
