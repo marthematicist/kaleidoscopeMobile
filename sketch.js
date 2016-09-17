@@ -66,11 +66,12 @@ function setup() {
   
   background( bgColor );
   buf.clear();
+  // translate to center of screen
+  buf.translate( 0.5*xRes , 0.5*yRes );
 }
 
 function draw() {
   frameCounter++;
-  buf.push();
   // the current device rotation measurements
   var rotX = rotationX;
   var rotY = rotationY;
@@ -124,8 +125,7 @@ function draw() {
   var marker = lerp( minMarker , maxMarker , dr );
   
   
-  // translate to center of screen
-  buf.translate( 0.5*xRes , 0.5*yRes );
+  
   
   // set marker color
   fillColor = color( t , 100 , 100 , markerAlpha );
@@ -148,7 +148,6 @@ function draw() {
   buf.ellipse( cX , cY , 10 , 10 );
   
   */
-  buf.pop();
   image( buf , 0 , 0 );
   
 }
