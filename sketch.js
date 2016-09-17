@@ -1,7 +1,7 @@
 
 function setupGlobalVariables() {
   // screen dimensions
-  xRes = 900;
+  xRes = 950;
   yRes = 1500;
   // global rotation in x and y directions
   gRotX = 0;
@@ -23,6 +23,7 @@ function setupGlobalVariables() {
   // color schemes
   bgColor = color( 0 , 0 , 100 , 1);
   drawColor = color( 0 , 0 , 0 , 1);
+  markerColor = color( 0 , 0 , 0 , 1);
   // how transparent the marker is
   markerAlpha = 0.05;
   // number of frames to wait while initializing
@@ -49,6 +50,8 @@ function setup() {
   
   // set up canvas size
   createCanvas( xRes , yRes );
+  // set up marker graphics buffer
+  buf = createGraphics( xRes , yRes );
 
   // do not draw borders
   noStroke();
@@ -134,6 +137,13 @@ function draw() {
     ellipse( x , y , marker , marker);
     
   }
+  buf.clear();
+  buf.noStroke();
+  buf.fill( markerColor );
+  buf.ellipse( cX , cY , 10 , 10 );
+  image( buf , 0 , 0 );
+  
+  
 }
 
 
