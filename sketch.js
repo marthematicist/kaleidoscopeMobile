@@ -25,7 +25,7 @@ function setupGlobalVariables() {
   drawColor = color( 0 , 0 , 0 , 1);
   markerColor = color( 0 , 0 , 0 , 1);
   // how transparent the marker is
-  markerAlpha = 0.4;
+  markerAlpha = 0.25;
   // number of frames to wait while initializing
   waitFrames = 200;
   // frame counter;
@@ -38,7 +38,7 @@ function setupGlobalVariables() {
   // minMarker and maxMarker control the smallest and largest
   // size of the dots drawn
   minMarker = 5;
-  maxMarker = 50;
+  maxMarker = 20;
 }
 
 
