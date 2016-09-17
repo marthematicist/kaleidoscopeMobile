@@ -54,7 +54,7 @@ function setup() {
   buf = createGraphics( xRes , yRes );
 
   // do not draw borders
-  noStroke();
+  buf.noStroke();
   // set the angle mode to degrees
   angleMode( DEGREES );
   
