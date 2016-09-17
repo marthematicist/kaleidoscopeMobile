@@ -38,7 +38,7 @@ function setupGlobalVariables() {
   dt = 1;
   // minMarker and maxMarker control the smallest and largest
   // size of the dots drawn
-  minMarker = 10;
+  minMarker = 7;
   maxMarker = 40;
 }
 
