@@ -3,6 +3,7 @@ function setupGlobalVariables() {
   // screen dimensions
   xRes = 960;
   yRes = 1400;
+  maxRes = max( xRes , yRes );
   // global rotation in x and y directions
   gRotX = 0;
   gRotY = 0;
@@ -91,14 +92,14 @@ function draw() {
   if( abs(dRotY) < maxRotY ) {
     cY -= dRotX;
   }
-  if( cX > xRes ){
-    cX = xRes;
+  if( cX > maxRes ){
+    cX = maxRes;
   }
   if( cX < 0 ){
     cX = 0;
   }
-  if( cY > yRes ){
-    cY = yRes;
+  if( cY > maxRes ){
+    cY = maxRes;
   }
   if( cY < 0 ) {
     cY = 0;
