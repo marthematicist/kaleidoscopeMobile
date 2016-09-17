@@ -74,7 +74,8 @@ function draw() {
   // if still in setup, don't draw anything
   if( frameCounter < waitFrames ) {
     textAlign( CENTER );
-    text( "Use your device's tilt sensors to draw. \n Marthematicist" , 0.5*xRes , 0.5*yRes );
+    textSize( 30 );
+    text( "KALEIDOSCOPE \n Use your device's tilt sensors to draw. \n -Marthematicist" , 0.5*xRes , 0.5*yRes );
     return
   }
   if( frameCounter == waitFrames) {
