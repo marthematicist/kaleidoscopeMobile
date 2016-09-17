@@ -50,24 +50,15 @@ function setup() {
   
   // set up canvas size
   createCanvas( xRes , yRes );
-  // set up marker graphics buffer
-  buf = createGraphics( xRes , yRes );
 
   // do not draw borders
-  buf.noStroke();
+  noStroke();
   // set the angle mode to degrees
   angleMode( DEGREES );
   
-  // initialize global rotation
-  for( var i = 0 ; i < 2000000 ; i++ ) {
-    gRotX = attenX*rotationX + (1-attenX)*gRotX;
-    gRotY = attenY*rotationY + (1-attenX)*gRotY;
-  }
   
   background( bgColor );
-  buf.clear();
-  // translate to center of screen
-  buf.translate( 0.5*xRes , 0.5*yRes );
+  
 }
 
 function draw() {
@@ -131,24 +122,17 @@ function draw() {
   fillColor = color( t , 100 , 100 , markerAlpha );
   
   // Set the fill color
-  buf.fill( fillColor );
-  
+  fill( fillColor );
+  // translate to center of screen
+  translate( 0.5*xRes , 0.5*yRes );
   
   for( i = 0 ; i < numSpokes ; i++ ){
-    buf.rotate( 360 / numSpokes );
-    buf.ellipse( x , y , marker , marker);
+    rotate( 360 / numSpokes );
+    ellipse( x , y , marker , marker);
     
   }
   
   
-  /* 
-  buf.clear();
-  buf.noStroke();
-  buf.fill( markerColor );
-  buf.ellipse( cX , cY , 10 , 10 );
-  
-  */
-  image( buf , 0 , 0 );
   
 }
 
