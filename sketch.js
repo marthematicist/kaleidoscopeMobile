@@ -1,8 +1,8 @@
 
 function setupGlobalVariables() {
   // screen dimensions
-  xRes = 960;
-  yRes = 1400;
+  xRes = windowWidth;
+  yRes = windowHeight;
   maxRes = max( xRes , yRes );
   // global rotation in x and y directions
   gRotX = 0;
