@@ -1,5 +1,5 @@
 
-function setupGlobalVariables() {
+setupGlobalVariables = function() {
   // screen dimensions
   xRes = windowWidth;
   yRes = windowHeight;
