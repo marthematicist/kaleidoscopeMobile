@@ -13,6 +13,9 @@ function setupGlobalVariables() {
   // maximum rotation input
   maxRotX = 30;
   maxRotY = 30;
+  // rotation speed
+  speedX = 0.9;
+  speedY = 0.1;
   // cursor position
   cX = 0.5*xRes;
   cY = 0.5*yRes;
@@ -99,11 +102,11 @@ function draw() {
 
   // update cursor position
   if( abs(dRotX) < maxRotX ) {
-    a -= 0.05*dRotY;
+    a -= speedY*dRotY;
 
   }
   if( abs(dRotY) < maxRotY ) {
-    r += 0.9*dRotX;
+    r += speedX*dRotX;
   }
   a %= 360;
 
