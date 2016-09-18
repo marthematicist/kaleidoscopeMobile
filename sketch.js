@@ -75,7 +75,7 @@ function setup() {
   textSize( 60 );
   text("KALEIDOSCOPE" , 0.5*xRes , 0.5*yRes );
   textSize( 30 );
-  text( "Use your device's tilt sensors to draw. \n -marthematicist-" , 0.5*xRes , 0.5*yRes + 35 );
+  text( "Use your device's tilt sensors to draw.\n-marthematicist-" , 0.5*xRes , 0.5*yRes + 35 );
 }
 
 function draw() {
